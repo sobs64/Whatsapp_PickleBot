@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5">
+
+    <title>Swad Orders Dashboard</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: #0d1117; /* Dark background */
+            color: #c9d1d9;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            background: linear-gradient(90deg, #00c6ff, #0072ff); 
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.6);
+        }
+
+        /* Dashboard Analytics Cards */
+        .analytics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .card {
+            background: #161b22;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.7);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: #1c2128;
+        }
+
+        .card h2 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: #00c6ff;
+        }
+
+        .card p {
+            margin: 10px 0 0;
+            font-size: 1rem;
+            color: #c9d1d9;
+        }
+
+        /* Table */
+        table {
+            width: 85%;
+            margin: 20px auto 50px;
+            border-collapse: collapse;
+            background: #161b22;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: center;
+        }
+
+        th {
+            background: #00c6ff;
+            color: #ffffff;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        tr {
+            border-bottom: 1px solid #21262d;
+        }
+
+        tr:nth-child(even) {
+            background: #1c2128;
+        }
+
+        tr:nth-child(odd) {
+            background: #161b22;
+        }
+
+        tr:hover {
+            background: #238636;
+            color: white;
+            transition: 0.2s ease-in-out;
+        }
+
+        td {
+            font-size: 1rem;
+            color: #c9d1d9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Swad Orders Dashboard</h1>
+
+    <!-- Analytics Cards -->
+    <div class="analytics">
+        <div class="card">
+            <h2>{{ total_orders }}</h2>
+            <p>Total Orders</p>
+        </div>
+        <div class="card">
+            <h2>{{ unique_users }}</h2>
+            <p>Unique Users</p>
+        </div>
+        <div class="card">
+            <h2>{{ most_ordered_flavour }}</h2>
+            <p>Most Ordered Flavour</p>
+        </div>
+        <div class="card">
+            <h2>{{ total_quantity }} g</h2>
+            <p>Total Quantity</p>
+        </div>
+    </div>
+
+    <!-- Orders Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>User Number</th>
+                <th>Flavour</th>
+                <th>Quantity (gm)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order[0] }}</td>
+                <td>{{ order[1] }}</td>
+                <td>{{ order[2] }}</td>
+                <td>{{ order[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
