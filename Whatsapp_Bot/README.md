@@ -1,4 +1,4 @@
-#Swad Homemade Pickles WhatsApp Bot & Dashboard
+# Swad Homemade Pickles WhatsApp Bot & Dashboard
 
 A WhatsApp bot for **Swad Homemade Pickles** that allows users to place orders and a dashboard to view order history and analytics.
 
@@ -117,3 +117,4 @@ Check database path in picklebot.py.
 
 
 Ensure SQLite file is writable.
+
