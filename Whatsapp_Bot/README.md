@@ -2,15 +2,15 @@
 
 A WhatsApp bot for **Swad Homemade Pickles** that allows users to place orders and a dashboard to view order history and analytics.
 
-**Backend Bot**: picklebot.py
-**Frontend Dashboard**: app.py
-**Database**: SQLite (swad_orders.db)
+- **Backend Bot**: picklebot.py
+- **Frontend Dashboard**: app.py
+- **Database**: SQLite (swad_orders.db)
 
 ## Tech Stack
 
-**Frontend**: Flask (Python), HTML/CSS, Chart.js
-**Backend**: Python, Flask, Requests, SQLAlchemy
-**Database**: SQLite
+- **Frontend**: Flask (Python), HTML/CSS, Chart.js
+- **Backend**: Python, Flask, Requests, SQLAlchemy
+- **Database**: SQLite
 ## Database Schema Summary
 
 orders(id(pk), user_number, flavour, quantity)
@@ -93,3 +93,4 @@ Check database path in picklebot.py.
 Ensure SQLite file is writable.
 
 --------------------
+
